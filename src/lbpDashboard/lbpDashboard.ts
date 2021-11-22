@@ -66,7 +66,6 @@ export class lbpDashboard {
 
   async attached(): Promise<void> {
     let waiting = false;
-
     try {
       if (this.lbpManagerService.initializing) {
         await Utils.sleep(200);
@@ -93,7 +92,6 @@ export class lbpDashboard {
       this.priceFetchIntervalId = setInterval(() => {
         this.lbpMgr.ensurePriceHistory(true);
       }, 60000);
-
     } catch (ex) {
       this.eventAggregator.publish("handleException", new EventConfigException("Sorry, an error occurred", ex));
     }

@@ -1,82 +1,92 @@
 @import "styles/styles.scss";
+
+.loading {
+    text-align: center;
+    font-size: 32px;
+    padding-top: 24px;
+    i {
+        color: $Secondary03-dev;
+    }
+}
+
 .page.lbpDashboardContainer {
-  .lbpDashboard {
-    display: grid;
-    grid-template-columns: 45fr 20fr 0 35fr;
-    grid-template-areas:
-      "tokenInfo timeLeft timeLeft timeLeft"
-      "graph graph . form"
-      "about about distribution distribution";
+    .lbpDashboard {
+        display: grid;
+        grid-template-columns: 45fr 20fr 0 35fr;
+        grid-template-areas:
+            "tokenInfo timeLeft timeLeft timeLeft"
+            "graph graph . form"
+            "about about distribution distribution";
 
-    column-gap: 32px;
-    row-gap: 60px;
+        column-gap: 32px;
+        row-gap: 60px;
 
-    .tokenInfo {
-      grid-area: tokenInfo;
+        .tokenInfo {
+            grid-area: tokenInfo;
+        }
+        .timeLeft {
+            grid-area: timeLeft;
+            justify-self: right;
+        }
+        .graph {
+            grid-area: graph;
+            height: 400px;
+        }
+        .form {
+            grid-area: form;
+        }
+        .about {
+            grid-area: about;
+        }
+        .distribution {
+            grid-area: distribution;
+        }
     }
-    .timeLeft {
-      grid-area: timeLeft;
-      justify-self: right;
-    }
-    .graph {
-      grid-area: graph;
-      height: 400px;
-    }
-    .form {
-      grid-area: form;
-    }
-    .about {
-      grid-area: about;
-    }
-    .distribution {
-      grid-area: distribution;
-    }
-  }
 }
 
 @media screen and (max-width: 1220px) {
-  .page.lbpDashboardContainer {
-    .lbpDashboard {
-      grid-template-columns: auto;
-      grid-template-areas:
-        "tokenInfo"
-        "timeLeft"
-        "form"
-        "graph"
-        "distribution"
-        "about";
-      justify-items: center;
+    .page.lbpDashboardContainer {
+        .lbpDashboard {
+            grid-template-columns: auto;
+            grid-template-areas:
+                "tokenInfo"
+                "timeLeft"
+                "form"
+                "graph"
+                "distribution"
+                "about";
+            justify-items: center;
 
-      column-gap: 0;
-      row-gap: 32px;
+            column-gap: 0;
+            row-gap: 32px;
 
-      .timeLeft {
-        justify-self: center;
-      }
+            .timeLeft {
+                justify-self: center;
+            }
 
-      .graph {
-        width: calc(100vw - 320px);
-      }
+            .graph {
+                width: calc(100vw - 320px);
+            }
+        }
     }
-  }
 }
 
 @media screen and (max-width: 550px) {
-  .page.lbpDashboardContainer {
-    .lbpDashboard {
-      .graph {
-        width: calc(100vw - 60px);
-      }
+    .page.lbpDashboardContainer {
+        .lbpDashboard {
+            .graph {
+                width: calc(100vw - 60px);
+            }
+        }
     }
-  }
 }
 
 @media screen and (max-width: 420px) {
-  .page.lbpDashboardContainer {
-    .lbpDashboard {
-      .graph {
-        width: calc(100vw - 20px);
-      }
+    .page.lbpDashboardContainer {
+        .lbpDashboard {
+            .graph {
+                width: calc(100vw - 20px);
+            }
+        }
     }
-  }
 }
