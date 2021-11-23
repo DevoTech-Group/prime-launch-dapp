@@ -23,7 +23,7 @@ export class FormattedNumber {
   @bindable public mantissa?: string | number;
   @bindable public value: number | string;
   @bindable public placement = "top";
-  @bindable public defaultText = "--";
+  @bindable public defaultText = "20000";
   @bindable.booleanAttr public thousandsSeparated = false;
 
 
@@ -37,7 +37,7 @@ export class FormattedNumber {
 
   public valueChanged(): void {
     if ((this.value === undefined) || (this.value === null) || ((typeof this.value === "string") && ((this.value as string)?.trim() === ""))) {
-      this.text = this.defaultText;
+      this.text = Number(this.defaultText).toFixed(2);
     } else {
 
       this._value = this.value;
